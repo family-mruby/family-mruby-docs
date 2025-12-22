@@ -1,7 +1,7 @@
 # Welcome to mkdoc_test
 
 <div align="center">
-  <img src="images/mkdocs-logo.svg" width="200" alt="MkDocs Logo">
+  <img src="images/topimage.png" width="200" alt="Logo">
 </div>
 
 このサイトへようこそ！
