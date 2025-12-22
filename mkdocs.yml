@@ -1,9 +1,10 @@
-site_name: mkdoc_test
-site_description: Test documentation site
+site_name: Family mruby project
+site_description: Family mruby project documentation
 site_author: kishima
-site_url: https://kishima.github.io/mkdoc_test/
+site_url: https://family-mruby.github.io/family-mruby-docs/
 
 theme:
+  favicon: assets/favicon.ico
   name: material
   language: en
   palette:
@@ -43,7 +44,7 @@ plugins:
           build: true
           nav_translations:
             Home: ホーム
-            About: アバウト
+            About: サイトについて
 
 nav:
   - Home: index.md
