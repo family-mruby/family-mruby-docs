@@ -1,29 +1,55 @@
-# Welcome to mkdoc_test
+# FMRuby Core ドキュメント
 
 <div align="center">
-  <img src="images/topimage.png" width="200" alt="Logo">
+  <img src="images/topimage.png" width="500" alt="FMRuby Logo">
 </div>
 
-このサイトへようこそ！
+FMRuby Coreドキュメントへようこそ！
 
-## プロジェクトについて
+## FMRuby Coreについて
 
-これはMkDocsを使用したドキュメントサイトのテストプロジェクトです。
+FMRuby Coreは、ESP32-S3-N16R8向けに設計された軽量な組み込みOSで、マルチVM対応（mruby/Lua）とハードウェアアクセラレーテッドグラフィックスを特徴としています。
 
-## 特徴
+## 主な機能
 
-- Dockerを使用したビルド環境
-- Material for MkDocsテーマ
-- GitHub Pagesでの公開
+- **マルチVMランタイム**: mruby（PicoRuby）、Lua 5.4、ネイティブCアプリケーションのサポート
+- **グラフィックスシステム**: LovyanGFX互換APIによるハードウェアアクセラレーテッドグラフィックス
+- **NTSC映像出力**: 別のESP32-WROVERへのSPI経由での出力
+- **オーディオシステム**: APUエミュレーションによる音声処理
+- **タスク管理**: FreeRTOSベースのマルチタスク処理とアプリケーション毎のメモリ分離
+- **デュアルプラットフォーム開発**: ESP32ハードウェアまたはLinuxシミュレーション（SDL2）でのビルド
+- **USBホスト対応**: キーボードとマウス入力
+- **SDカード対応**: アプリケーションとデータのファイルシステムアクセス
 
 ## クイックスタート
 
-ドキュメントをビルドするには：
+### ESP32向けビルド
 
 ```bash
-./docker/build.sh
+rake build:esp32
 ```
+
+### Linuxシミュレーション向けビルド
+
+```bash
+rake build:linux
+./build/fmruby-core.elf
+```
+
+### すべてのビルドコマンドを表示
+
+```bash
+rake -T
+```
+
+## プロジェクトアーキテクチャ
+
+- **マルチVMアプリケーションランタイム**: Ruby、Lua、Cアプリケーションの実行
+- **キャンバスベースグラフィックス**: 効率的なレンダリングシステム
+- **ハードウェア抽象化層（HAL）**: プラットフォーム非依存API
+- **メッセージングシステム**: プロセス間通信
+- **メモリ管理**: アプリケーション毎の独立したメモリ割り当て
 
 ## 次のステップ
 
-詳細については[About](about.md)ページをご覧ください。
+システムアーキテクチャ、APIドキュメント、開発ガイドラインの詳細については、[About](about.md)ページをご覧ください。

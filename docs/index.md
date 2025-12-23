@@ -1,30 +1,55 @@
-# Welcome to mkdoc_test
+# FMRuby Core Documentation
 
 <div align="center">
-  <img src="images/topimage.png" width="200" alt="Logo">
+  <img src="images/topimage.png" alt="FMRuby Logo">
 </div>
 
-Welcome to this site!
+Welcome to the FMRuby Core documentation!
 
-## About This Project
+## About FMRuby Core
 
-This is a test project for a documentation site using MkDocs.
+FMRuby Core is a lightweight embedded operating system designed for ESP32-S3-N16R8, featuring multi-VM support (mruby/Lua) and hardware-accelerated graphics.
 
-## Features
+## Key Features
 
-- Build environment using Docker
-- Material for MkDocs theme
-- Publishing with GitHub Pages
-- Multilingual support (Japanese/English)
+- **Multi-VM Runtime**: Support for mruby (PicoRuby), Lua 5.4, and native C applications
+- **Graphics System**: Hardware-accelerated graphics with LovyanGFX-compatible API
+- **NTSC Video Output**: Via SPI to separate ESP32-WROVER
+- **Audio System**: APU-emulated audio processing
+- **Task Management**: FreeRTOS-based multitasking with per-app memory isolation
+- **Dual-Platform Development**: Build for ESP32 hardware or Linux simulation (SDL2)
+- **USB Host Support**: Keyboard and mouse input
+- **SD Card Support**: Filesystem access for applications and data
 
 ## Quick Start
 
-To build the documentation:
+### Building for ESP32
 
 ```bash
-./docker/build.sh
+rake build:esp32
 ```
+
+### Building for Linux Simulation
+
+```bash
+rake build:linux
+./build/fmruby-core.elf
+```
+
+### View All Build Commands
+
+```bash
+rake -T
+```
+
+## Project Architecture
+
+- **Multi-VM Application Runtime**: Run Ruby, Lua, and C applications
+- **Canvas-based Graphics**: Efficient rendering system
+- **Hardware Abstraction Layer (HAL)**: Platform-independent API
+- **Messaging System**: Inter-process communication
+- **Memory Management**: Isolated memory allocation per application
 
 ## Next Steps
 
-For more details, please see the [About](about.md) page.
+For detailed information about the system architecture, API documentation, and development guidelines, please see the [About](about.md) page.
